@@ -6,7 +6,7 @@ import com.joshuacjacoby.exceptions.NullParameterException;
 import java.util.Date;
 import java.util.Objects;
 
-public class Flight {
+public class CommercialFlight implements Flight {
 
     private Airline airline;
     private Airport origin;
@@ -25,7 +25,7 @@ public class Flight {
                 '}';
     }
 
-    public Flight(Airline airline, Airport origin, Airport destination, String flightNumber, Date departureTime) throws NullParameterException, BadParameterException {
+    public CommercialFlight(Airline airline, Airport origin, Airport destination, String flightNumber, Date departureTime) throws NullParameterException, BadParameterException {
         setAirline(airline);
         setOrigin(origin);
         setDestination(destination);
@@ -95,7 +95,7 @@ public class Flight {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Flight flight = (Flight) o;
+        CommercialFlight flight = (CommercialFlight) o;
         return getAirline().equals(flight.getAirline()) && getOrigin().equals(flight.getOrigin()) && getDestination().equals(flight.getDestination()) && getFlightNumber().equals(flight.getFlightNumber()) && getDepartureTime().equals(flight.getDepartureTime());
     }
 
