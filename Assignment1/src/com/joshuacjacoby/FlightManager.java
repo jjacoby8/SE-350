@@ -28,8 +28,8 @@ public final class FlightManager {
         return instance;
     }
 
-    public static void createFlight(String type, Airline airline, Airport origin, Airport destination, String flightNumber, Date departureTime) throws BadParameterException, NullParameterException {
-        Flight newFlight = FlightFactory.createFlight(type, airline, origin, destination, flightNumber, departureTime);
+    public static void createFlight(String type, Airline airline, Airport origin, Airport destination, String flightNumber, Date departureTime, int passengerCapacity) throws BadParameterException, NullParameterException {
+        Flight newFlight = FlightFactory.createFlight(type, airline, origin, destination, flightNumber, departureTime, passengerCapacity);
         flights.add(newFlight);
     }
     

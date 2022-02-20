@@ -1,20 +1,21 @@
 package com.joshuacjacoby;
 
-import java.security.InvalidParameterException;
+import com.joshuacjacoby.exceptions.BadParameterException;
+
 import java.util.Objects;
 
 public class Airport {
 
     private String name;
 
-    public Airport(String name) {
+    public Airport(String name) throws BadParameterException {
         setName(name);
     }
 
-    private void setName(String name) {
+    private void setName(String name) throws BadParameterException {
         if (name.length() != 3
                 || !name.matches("^[A-Z]*$")) {
-            throw new InvalidParameterException("Airport name must be 3 capitalized letters.");
+            throw new BadParameterException("Airport name must be 3 capitalized letters.");
         }
 
         this.name = name;
