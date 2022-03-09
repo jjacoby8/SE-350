@@ -9,7 +9,7 @@ import java.util.UUID;
 public class TravelManager {
 
     public static void main(String[] args) throws BadParameterException, NullParameterException {
-        FlightManager flightManager = FlightManager.getInstance();
+        ExpensiveObject flightManager = new FlightManagerProxy();
 
 	    Airport airport = AirportFactory.createAirport("ABC");
         Airline airline = AirlineFactory.createAirport("Delta");
